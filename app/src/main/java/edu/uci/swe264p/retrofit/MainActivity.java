@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     static final String TAG = MainActivity.class.getSimpleName();
-    static final String BASE_URL = "http://api.themoviedb.org/3/";
+    static final String BASE_URL = "https://api.themoviedb.org/3/";
     static Retrofit retrofit = null;
     final static String API_KEY = "YOUR_API_KEY";
 
