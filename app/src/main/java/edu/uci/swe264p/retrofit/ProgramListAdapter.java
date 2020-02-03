@@ -33,8 +33,8 @@ public class ProgramListAdapter extends RecyclerView.Adapter<ProgramListAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String animal = mData.get(position);
-        holder.tv.setText(animal);
+        String program = mData.get(position);
+        holder.tv.setText(program);
     }
 
     @Override
