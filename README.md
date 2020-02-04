@@ -84,7 +84,7 @@ public class Movie {
         this.overview = overview;
     }
     
-    // ...getters for the above fields
+    // ... Getters for the above fields
 }
 ```
 
@@ -148,13 +148,13 @@ This way, Android executes the request in a separate thread and does not block t
 
 The `RecyclerView` widget is a more advanced and flexible version of `ListView`. It has several advantages such as the ability to dynamically create list items and to cache and reuse the scrolled-out items (check [here](https://developer.android.com/guide/topics/ui/layout/recyclerview) for details). However, it is a little bit complex to use. Here are the required steps to use `RecyclerView`:
 
-* Add a `RecyclerView` widget to the layout file of the Activity (`activity_program_list.xml`)
+1. Add a `RecyclerView` widget to the layout file of the Activity (`activity_program_list.xml`)
 
-* Create an additional layout file (`program_row.xml`) to display single item in the list
+2. Create an additional layout file (`program_row.xml`) to display single item in the list
 
-* Create an Adapter class (`ProgramListAdapter.java`) that extends `RecyclerView.Adapter` to feed your data to the list. In the Adapter class, we need to:
+3. Create an Adapter class (`ProgramListAdapter.java`) that extends `RecyclerView.Adapter` to feed your data to the list. In the Adapter class, we need to:
 
-  * Declare a ViewHolder class that extends `RecyclerView.ViewHolder`, responsible for displaying single item with a view.
+* Declare a ViewHolder class that extends `RecyclerView.ViewHolder`, responsible for displaying single item with a view.
 
 ```java
 public class ViewHolder extends RecyclerView.ViewHolder {
@@ -167,9 +167,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 ```
 
 * Overwrite three built-in methods: 
-* `onCreateViewHolder()` (for creating a new ViewHolder with its corresponding layout)
+  * `onCreateViewHolder()` (for creating a new ViewHolder with its corresponding layout)
   * `onBindViewHolder()` (for binding the data of single item to a view)
-* `getItemCount()` (for reporting the size of your dataset).
+  * `getItemCount()` (for reporting the size of your dataset).
 
 ```java
 public class ProgramListAdapter extends RecyclerView.Adapter<ProgramListAdapter.ViewHolder> {
@@ -197,7 +197,7 @@ public class ProgramListAdapter extends RecyclerView.Adapter<ProgramListAdapter.
 }
 ```
 
-* In the displaying Activity (`ProgramListActivity.java`), obtain a handle to the `RecyclerView` object, connect it to a layout manager, and attach an adapter for the data to be displayed.
+4. In `ProgramListActivity`, obtain a handle to the `RecyclerView` object, connect it to a layout manager, and attach an adapter for the data to be displayed.
 
 ```java
 public class ProgramListActivity extends AppCompatActivity {
@@ -235,12 +235,12 @@ https://api.themoviedb.org/3/movie/top_rated?api_key=YOUR_API_KEY
 
 You have to display the 20 movies in the results returned by the above REST API.
 
-All required class and layout files are provided in the project. Specifically, you have to modify the following four classes:
+All required class and layout files are provided in the project. Specifically, you have to modify the following four files:
 
 * `MovieApiService.java` (add one more method for the above API)
-* `TopRatedResponse.java` (similar to the `Movie` class)
-* `MovieListAdapter.java` (similar to the `ProgramListAdadpter` class)
-* `MovieListActivity.java` (similar to the `ProgramListActivity` class)
+* `TopRatedResponse.java` (implement it as the `Movie` class)
+* `MovieListAdapter.java` (implement it the `ProgramListAdadpter` class)
+* `MovieListActivity.java` (implement it the `ProgramListActivity` class)
 
 Besides, you need to check `movie_row.xml` to know where to place the data when you modify `MovieListAdapter`. Note that, `movie_row.xml` contains a `ImageView` field for displaying the poster of a movie. The poster image can be retrieved with the following URL (refer to [here](https://developers.themoviedb.org/3/getting-started/images)):
 
