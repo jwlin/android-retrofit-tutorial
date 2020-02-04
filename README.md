@@ -237,10 +237,10 @@ You have to display the 20 movies in the results returned by the above REST API.
 
 All required class and layout files are provided in the project. Specifically, you have to modify the following four files:
 
-* `MovieApiService.java` (add one more method for the above API)
-* `TopRatedResponse.java` (implement it as the `Movie` class)
-* `MovieListAdapter.java` (implement it the `ProgramListAdadpter` class)
-* `MovieListActivity.java` (implement it the `ProgramListActivity` class)
+* `MovieApiService.java`: add one more method for the above API
+* `TopRatedResponse.java`: implement it as the `Movie` class
+* `MovieListAdapter.java`: implement it as the `ProgramListAdadpter` class
+* `MovieListActivity.java`: implement it as the `ProgramListActivity` class
 
 Besides, you need to check `movie_row.xml` to know where to place the data when you modify `MovieListAdapter`. Note that, `movie_row.xml` contains a `ImageView` field for displaying the poster of a movie. The poster image can be retrieved with the following URL (refer to [here](https://developers.themoviedb.org/3/getting-started/images)):
 
